@@ -1,7 +1,7 @@
 const taskInfo = JSON.parse(localStorage.getItem("allTasks")) || {progressCnt: 0, totalTasks: 3};
 let tasks = document.querySelectorAll("input[type='text']");
 const taskListContainer = document.querySelector(".tasks-list");
-const chkBoxes = document.querySelectorAll(".custom-chk");
+let chkBoxes = document.querySelectorAll(".custom-chk");
 const error = document.querySelector(".error-msg");
 const progressBar = document.querySelector(".track-div");
 const span = document.querySelector(".progress span");
@@ -64,10 +64,11 @@ function addTask(cnt, canReset) {
     taskListContainer.append(clonedTask);
 
     tasks = document.querySelectorAll("input[type='text']");
+    chkBoxes = document.querySelectorAll(".custom-chk");
 
+    if(canReset) resetState();
     localStorage.setItem("allTasks", JSON.stringify(taskInfo));
     updateProgress();
-    if(canReset) resetState();
 
     removeBtn.classList.remove("hide-btn");
     if(taskInfo.totalTasks === 5) addBtn.classList.add("hide-btn");
@@ -78,7 +79,10 @@ function removeTask() {
     delete taskInfo[taskListContainer.lastElementChild.children[1].id];
     taskInfo.totalTasks--;
     taskListContainer.removeChild(taskListContainer.lastElementChild);
+    
     tasks = document.querySelectorAll("input[type='text']");
+    chkBoxes = document.querySelectorAll(".custom-chk");
+
     localStorage.setItem("allTasks", JSON.stringify(taskInfo));
     updateProgress();
 
