@@ -1,0 +1,469 @@
+:root {
+    --primary: #e2f1f1bf;
+    --secondary: #1b80ae;
+    --light-grey: #fbfbfb;
+    --dark-grey: rgb(160, 152, 152);
+    --pure: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary);
+    display: flex;
+    gap: 2.4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 1rem;
+    padding-bottom: 3rem;
+}
+
+#focus-head {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#focus-head span {
+    color: var(--secondary)
+}
+
+.main-todo {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    padding: 2rem;
+    background-color: var(--light-grey);
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.today-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.today-head img {
+    animation: rotator 5s linear infinite;
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(90deg);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    75% {
+        transform: rotateZ(270deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@media screen and (max-width: 572px) {
+    #focus-head {
+        font-size: 3rem;
+    }
+
+    @media screen and (max-width: 432px) {
+        #focus-head {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.info-progress {
+    margin-block: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+#headline {
+    font-size: 0.75rem;
+    color: var(--dark-grey);
+}
+
+.progress {
+    width: 100%;
+    height: 28px;
+    background-color: var(--primary);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.error-msg {
+    font-size: 0.8rem;
+    color: red;
+    visibility: hidden;
+}
+
+.show-error {
+    visibility: visible;
+}
+
+.progress span {
+    font-size: 0.7rem;
+    position: absolute;
+    padding: 0.4rem 0.4rem 0.4rem 1rem;
+    color: var(--pure);
+}
+
+.track-div {
+    height: 100%;
+    border-radius: 50px;
+    background-color: var(--secondary);
+    transition: width 0.4s ease;
+}
+
+.tasks-list {
+    margin-bottom: 1rem;
+}
+
+.task {
+    padding-inline: 1.5rem;
+    background-color: var(--pure);
+    border: 1px solid var(--dark-grey);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.task input[type="text"] {
+    border: none;
+    background-color: var(--pure);
+    width: 100%;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left: 1.2rem;
+    align-self: stretch;
+    padding-block: 1.4rem;
+    font-family: inherit;
+}
+
+.task input[type="text"]::placeholder {
+    color: var(--dark-grey);
+}
+
+.custom-chk {
+    border: 1.5px solid var(--dark-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21px;
+    height: 21px;
+    padding: 0.3rem;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+.focused {
+    border-color: black;
+}
+
+.comp .custom-chk {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+}
+
+.comp input {
+    color: var(--secondary);
+    text-decoration: line-through;  
+    text-decoration-thickness: 0.01rem; 
+}
+
+.add-remove-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-task, .remove-task {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--dark-grey);;
+    background-color: var(--primary);
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.todo-end {
+    width: 100%;
+    text-align: center;
+}
+
+.todo-end p {
+    font-size: 1.02rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.todo-end span {
+    font-size: 0.85rem;
+    color: var(--dark-grey);
+}
+
+.hide-btn {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* :root {
+    --primary: #e2f1f1bf;
+    --secondary: #1b80ae;
+    --light-grey: #fbfbfb;
+    --dark-grey: rgb(160, 152, 152);
+    --pure: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary);
+    display: flex;
+    gap: 2.4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 1rem;
+    padding-bottom: 3rem;
+}
+
+#focus-head {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#focus-head span {
+    color: var(--secondary)
+}
+
+.main-todo {
+    width: 100%;
+    max-width: 580px;
+    padding: 2rem;
+    background-color: var(--light-grey);
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.today-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.today-head img {
+    animation: rotator 5s linear infinite;
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(90deg);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    75% {
+        transform: rotateZ(270deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@media screen and (max-width: 572px) {
+    #focus-head {
+        font-size: 3rem;
+    }
+
+    @media screen and (max-width: 432px) {
+        #focus-head {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.info-progress {
+    margin-block: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+#headline {
+    font-size: 0.75rem;
+    color: var(--dark-grey);
+}
+
+.progress {
+    width: 100%;
+    height: 28px;
+    background-color: var(--primary);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.error-msg {
+    font-size: 0.8rem;
+    color: red;
+    visibility: hidden;
+}
+
+.show-error {
+    visibility: visible;
+}
+
+.progress span {
+    font-size: 0.7rem;
+    position: absolute;
+    padding: 0.4rem 0.4rem 0.4rem 1rem;
+    color: var(--pure);
+}
+
+.track-div {
+    height: 100%;
+    border-radius: 50px;
+    background-color: var(--secondary);
+    transition: width 0.5s ease;
+}
+
+.tasks-list {
+    margin-bottom: 4rem;
+}
+
+.task {
+    padding-inline: 1.5rem;
+    background-color: var(--pure);
+    border: 1px solid var(--dark-grey);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.task input[type="text"] {
+    border: none;
+    background-color: var(--pure);
+    width: 100%;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left: 1.2rem;
+    align-self: stretch;
+    padding-block: 1.4rem;
+    font-family: inherit;
+}
+
+.task input[type="text"]::placeholder {
+    color: var(--dark-grey);
+}
+
+.custom-chk {
+    border: 1.5px solid var(--dark-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21px;
+    height: 21px;
+    padding: 0.3rem;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+.focused {
+    border-color: black;
+}
+
+.comp .custom-chk {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+}
+
+.comp #tk {
+    color: var(--secondary);
+    text-decoration: line-through;  
+    text-decoration-thickness: 0.01rem; 
+}
+
+.todo-end {
+    width: 100%;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.todo-end p {
+    font-size: 1.02rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.todo-end span {
+    font-size: 0.85rem;
+    color: var(--dark-grey);
+} */
