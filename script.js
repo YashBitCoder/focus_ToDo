@@ -75,8 +75,11 @@ function addTask(cnt, canReset) {
 }
 
 function removeTask() {
-    if(taskInfo[taskListContainer.lastElementChild.children[1].id].completed) taskInfo["progressCnt"]--;
+    const id = taskListContainer.lastElementChild.children[1].id;
+
+    if(taskInfo[id] && taskInfo[id].completed) taskInfo["progressCnt"]--;
     delete taskInfo[taskListContainer.lastElementChild.children[1].id];
+
     taskInfo.totalTasks--;
     taskListContainer.removeChild(taskListContainer.lastElementChild);
     
